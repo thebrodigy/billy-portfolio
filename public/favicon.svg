@@ -1,0 +1,19 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C42"></stop>
+      <stop offset="100%" stop-color="#FF5E00"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#orangeGradient)"></circle>
+
+  <!-- Code Brackets -->
+  <path d="M45 40 L30 60 L45 80" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+
+  <path d="M75 40 L90 60 L75 80" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+
+  <!-- Slash -->
+  <line x1="55" y1="35" x2="65" y2="85" stroke="white" stroke-width="6" stroke-linecap="round"></line>
+</svg>
