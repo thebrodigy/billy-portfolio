@@ -116,8 +116,7 @@ export default function Hero() {
             }}
           >
             <div style={{ position: 'relative' }}>
-              {/* Spinning ring */}q222226ty577'
-              ?? cxxxxxxxxxxxxxxxx
+              {/* Spinning ring */}
               <div style={{
                 position: 'absolute', inset: -8,
                 borderRadius: '50%',
