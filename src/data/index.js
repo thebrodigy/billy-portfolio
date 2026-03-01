@@ -8,7 +8,7 @@ export const META = {
   email: 'labaybillyjames@gmail.com',
   linkedin: 'https://linkedin.com/in/billy-labay',
   github: 'https://github.com/thebrodigy',
-  photo: './public/photo.jpeg',
+  photo: '/photo.jpeg',
 }
 
 // ── Stats ─────────────────────────────────────────────────────
