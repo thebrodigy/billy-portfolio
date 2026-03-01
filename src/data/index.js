@@ -15,7 +15,7 @@ export const META = {
 export const STATS = [
   { value: '8+',       label: 'Years shipping code' },
   { value: '40+',      label: 'Microservices built & maintained' },
-  { value: 'CAD 500K+', label: 'Annual cloud savings' },
+  { value: '500K', label: 'Annual cloud savings' },
   { value: '99.9%',    label: 'Uptime maintained' },
 ]
 
