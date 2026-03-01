@@ -111,7 +111,7 @@ export const SKILLS = [
   {
     category: 'Languages & Frameworks',
     emoji: '☕',
-    items: ['Java', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'Spring Security'],
+    items: ['Java', 'Spring', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'Spring Security'],
   },
   {
     category: 'APIs & Architecture',
@@ -131,7 +131,7 @@ export const SKILLS = [
   {
     category: 'Cloud & DevOps',
     emoji: '☁️',
-    items: ['Microsoft Azure', 'Docker', 'Kubernetes', 'Azure DevOps', 'Jenkins', 'CI/CD', 'Git', 'Maven'],
+    items: ['Microsoft Azure', 'Docker', 'Kubernetes', 'OpenShift', 'Azure DevOps', 'Jenkins', 'CI/CD', 'Git', 'Maven', 'Vercel', 'Netlify', 'Render'],
   },
   {
     category: 'Security & Testing',
@@ -141,7 +141,7 @@ export const SKILLS = [
   {
     category: 'Frontend',
     emoji: '🖥️',
-    items: ['Angular', 'Ext JS'],
+    items: ['Angular', 'Ext JS', 'React', 'NextJS', 'Vite', 'Tailwind CSS'],
   },
 ]
 
