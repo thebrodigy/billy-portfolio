@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts fallback ──────────────────────────────────── */
+
+/* ── CSS Custom Properties ──────────────────────────────────── */
+:root {
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --orange-glow: rgba(249, 115, 22, 0.15);
+  --orange-border: rgba(249, 115, 22, 0.25);
+}
+
+/* DARK theme (default) */
+.dark {
+  --bg:       #0f0e0c;
+  --bg2:      #161410;
+  --bg3:      #1e1b16;
+  --bg4:      #252118;
+  --text:     #f5f0e8;
+  --text2:    #c4b89a;
+  --muted:    #7a6f5e;
+  --border:   rgba(255, 255, 255, 0.07);
+  --card-bg:  rgba(22, 20, 16, 0.8);
+  --shadow:   rgba(0, 0, 0, 0.5);
+}
+
+/* LIGHT theme */
+.light {
+  --bg:       #fefcf8;
+  --bg2:      #fff8f0;
+  --bg3:      #fef3e2;
+  --bg4:      #fdecd0;
+  --text:     #1a1208;
+  --text2:    #4a3728;
+  --muted:    #9a8570;
+  --border:   rgba(0, 0, 0, 0.09);
+  --card-bg:  rgba(255, 248, 240, 0.9);
+  --shadow:   rgba(249, 115, 22, 0.1);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection { background: var(--orange); color: #fff; }
+
+/* ── Dot grid background pattern ───────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--muted) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.25;
+}
+
+/* ── Grain overlay ──────────────────────────────────────────── */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── Typography helpers ─────────────────────────────────────── */
+.font-display { font-family: 'Syne', sans-serif; }
+.font-mono    { font-family: 'Fira Code', monospace; }
+.font-body    { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.5); }
+  50%     { box-shadow: 0 0 0 10px rgba(249,115,22,0); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  33%     { transform: translateY(-8px) rotate(1deg); }
+  66%     { transform: translateY(-4px) rotate(-1deg); }
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+@keyframes blobMove {
+  0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.animate-float    { animation: float 6s ease-in-out infinite; }
+.animate-spin-slow { animation: spinSlow 25s linear infinite; }
+.animate-blob     { animation: blobMove 8s ease-in-out infinite; }
+
+/* ── Orange glow button ─────────────────────────────────────── */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-orange:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,115,22,0.4); }
+.btn-orange:hover::before { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-glow);
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--orange-border);
+  box-shadow: 0 16px 48px var(--shadow);
+}
+
+/* ── Section label ──────────────────────────────────────────── */
+.section-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 48px;
+}
+
+/* ── Skill chip ─────────────────────────────────────────────── */
+.chip {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.71rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  transition: all 0.2s;
+  cursor: default;
+}
+.chip:hover {
+  background: var(--orange-glow);
+  border-color: var(--orange-border);
+  color: var(--orange);
+  transform: translateY(-1px);
+}
+
+/* ── Nav link ───────────────────────────────────────────────── */
+.nav-link {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 4px 0;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+.nav-link:hover, .nav-link.active { color: var(--orange); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* ── Experience timeline dot ────────────────────────────────── */
+.timeline-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  margin-top: 6px;
+  box-shadow: 0 0 0 3px var(--orange-glow);
+}
+
+/* ── Picture placeholder ────────────────────────────────────── */
+.avatar-ring {
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: linear-gradient(var(--bg2), var(--bg2)) padding-box,
+              linear-gradient(135deg, var(--orange), #fbbf24, var(--orange)) border-box;
+  animation: spinSlow 12s linear infinite;
+}
+
+/* ── Theme toggle ───────────────────────────────────────────── */
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text2);
+  font-size: 1rem;
+}
+.theme-toggle:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-glow); }
+
+/* ── Responsive nav ─────────────────────────────────────────── */
+@media (min-width: 768px) { .mobile-menu { display: none !important; } }
