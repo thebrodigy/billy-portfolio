@@ -2,7 +2,7 @@
 export const META = {
   name: 'Billy Labay',
   role: 'Fullstack Engineer',
-  tagline: "I write boring, reliable code — intentionally, because in the world of software, boring is beautiful. ",
+  tagline: "Hi! I'm <strong>Billy Labay</strong>. I write boring, reliable code — intentionally, because in the world of software, boring is beautiful. ",
   location: 'Laguna, PH',
   phone: '+63 961 023 5867',
   email: 'labaybillyjames@gmail.com',
@@ -88,10 +88,13 @@ export const PROJECTS = [
     description:
       "Long URLs are a crime. ZHO.RT is the verdict. Paste your URL, get something short and shareable. Fast, clean, no nonsense.",
     url: 'https://zhort.vercel.app',
-    github: 'https://github.com/thebrodigy/zho.rt-web',
+    github: [
+      { label: 'Frontend', url: 'https://github.com/thebrodigy/zho.rt-web' },
+    ],
     tags: ['Frontend', 'React', 'NextJS', 'Tailwind', 'Vercel'],
     emoji: '🔗',
     color: '#f97316',
+    thumbnail: '/thumbnails/zhort.png',
   },
   {
     name: 'Rain Check',
@@ -99,24 +102,28 @@ export const PROJECTS = [
     description:
       "Check the weather before you regret it. Real-time forecasts served with a side of personality. Because nobody likes surprise rain.",
     url: 'https://raincheckweb.vercel.app',
-    github: 'https://github.com/thebrodigy/rain-check-web',
+    github: [
+      { label: 'Frontend', url: 'https://github.com/thebrodigy/rain-check-web' },
+      { label: 'Backend', url: 'https://github.com/thebrodigy/rain-check'},
+    ],
     tags: ['Fullstack', 'React', 'NextJS', 'Tailwind', 'Java','Spring Boot', 'OpenWeather API','Vercel', 'Render'],
     emoji: '🌧️',
     color: '#38bdf8',
+    thumbnail: '/thumbnails/raincheck.png',
   },
 ]
 
 //Skills
 export const SKILLS = [
   {
-    category: 'Languages & Frameworks',
+    category: 'Backend',
     emoji: '☕',
     items: ['Java', 'Spring', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'Spring Security'],
   },
   {
-    category: 'APIs & Architecture',
-    emoji: '🏗️',
-    items: ['REST APIs', 'Microservices', 'Clean Architecture', 'SOLID Principles', 'Design Patterns'],
+    category: 'Frontend',
+    emoji: '🖥️',
+    items: ['Angular', 'Ext JS', 'React', 'NextJS', 'Vite', 'Tailwind CSS'],
   },
   {
     category: 'Databases & Caching',
@@ -124,24 +131,24 @@ export const SKILLS = [
     items: ['SQL Server', 'Oracle DB', 'MongoDB', 'Redis'],
   },
   {
-    category: 'Messaging & Queues',
-    emoji: '📨',
-    items: ['RabbitMQ', 'Azure Service Bus'],
-  },
-  {
     category: 'Cloud & DevOps',
     emoji: '☁️',
     items: ['Microsoft Azure', 'Docker', 'Kubernetes', 'OpenShift', 'Azure DevOps', 'Jenkins', 'CI/CD', 'Git', 'Maven', 'Vercel', 'Netlify', 'Render'],
   },
   {
+    category: 'Messaging & Queues',
+    emoji: '📨',
+    items: ['RabbitMQ', 'Azure Service Bus'],
+  },
+  {
+    category: 'APIs & Architecture',
+    emoji: '🏗️',
+    items: ['REST APIs', 'Microservices', 'Clean Architecture', 'SOLID Principles', 'Design Patterns'],
+  },
+  {
     category: 'Security & Testing',
     emoji: '🔐',
     items: ['JWT', 'OAuth2', 'JUnit', 'Mockito'],
-  },
-  {
-    category: 'Frontend',
-    emoji: '🖥️',
-    items: ['Angular', 'Ext JS', 'React', 'NextJS', 'Vite', 'Tailwind CSS'],
   },
 ]
 

@@ -16,13 +16,13 @@ export default function Skills() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 24,
-          marginBottom: 56,
+          alignItems: 'stretch',
         }}>
           {SKILLS.map((group, i) => (
             <FadeIn key={group.category} delay={i * 0.07}>
               <div
                 className="card"
-                style={{ padding: '24px 28px' }}
+                style={{ padding: '24px 28px', height: '100%' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
                   <span style={{ fontSize: '1.2rem' }}>{group.emoji}</span>

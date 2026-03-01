@@ -91,10 +91,7 @@ export default function Experience() {
                       </div>
                       <div style={{ textAlign: 'right' }}>
                         <div style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.72rem', color: 'var(--muted)', marginBottom: 3 }}>
-                          {exp.period}
-                        </div>
-                        <div style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.72rem', color: 'var(--muted)' }}>
-                          📍 {exp.location}
+                          {exp.period} |📍 {exp.location}
                         </div>
                       </div>
                     </div>

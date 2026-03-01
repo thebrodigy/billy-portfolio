@@ -64,9 +64,7 @@ export default function Projects() {
                   pointerEvents: 'none',
                 }} />
 
-                {/* Emoji */}
-                <div style={{ fontSize: '2.8rem', marginBottom: 20 }}>{project.emoji}</div>
-
+                <img src={project.thumbnail} alt={`${project.name} thumbnail`} style={{ width: '100%', borderRadius: 12, marginBottom: 20 }} />
                 {/* Category */}
                 <div style={{
                   fontFamily: 'Fira Code, monospace',
@@ -110,30 +108,36 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div style={{ display: 'flex', gap: 10 }}>
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-orange"
-                      style={{ fontSize: '0.8rem', padding: '9px 18px' }}
-                    >
-                      <LinkIcon />
-                      Visit
-                    </a>
-                  )}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                  <span>
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-orange"
+                        style={{ fontSize: '0.8rem', padding: '9px 18px' }}
+                      >
+                        <LinkIcon />
+                        Visit
+                      </a>
+                    )}
+                  </span>
                   {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-outline"
-                      style={{ fontSize: '0.8rem', padding: '9px 18px' }}
-                    >
-                      <GitHubIcon />
-                      Source
-                    </a>
+                    project.github.map(repo => (
+                      <span>
+                        <a
+                          href={repo.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn-outline"
+                          style={{ fontSize: '0.8rem', padding: '9px 18px', display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                        >
+                          <GitHubIcon />
+                          {repo.label}
+                        </a>
+                      </span>
+                    ))
                   )}
                 </div>
               </div>

@@ -21,14 +21,6 @@ export default function Footer() {
         gap: 12,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{
-            width: 28, height: 28, borderRadius: 7,
-            background: 'linear-gradient(135deg, #f97316, #fbbf24)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: '0.7rem', color: '#fff',
-          }}>
-            BL
-          </div>
           <span style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.72rem', color: 'var(--muted)' }}>
             © {year} {META.name}
           </span>
