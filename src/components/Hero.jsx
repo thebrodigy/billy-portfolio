@@ -101,7 +101,7 @@ export default function Hero() {
               }}>
                 Impact.
               </h1>
-            </div>   
+            </div>
           </div>
 
           {/* RIGHT: Photo */}
@@ -141,8 +141,8 @@ export default function Hero() {
                 justifyContent: 'center',
               }}>
                 <img src={META.photo}
-                    alt="Billy Labay"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  alt="Billy Labay"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
 
               {/* Floating badge: Caffeine */}
@@ -182,84 +182,73 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        <div>
+          <div>
 
-        {/* Tagline */}
-        <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.35s forwards', marginBottom: 36 }}>
-          <p style={{
-            fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
-            color: 'var(--text2)',
-            maxWidth: 480,
-            lineHeight: 1.75,
-          }}>
-            Hi! I'm <strong>Billy Labay</strong> — a fullstack software engineer who writes boring, reliable code — intentionally, because in the world of software, boring is beautiful.
-          </p>
-        </div>
-      
-        {/* Role chip */}
-        <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.25s forwards', marginBottom: 20 }}>
-          {/* Tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 24 }}>
-            <span key='Fullstack Engineer' className="chip">Backend Engineer</span>
-            <span key='Java' className="chip">Java</span>
-            <span key='Spring Boot' className="chip">Spring Boot</span>
-            <span key='JavaScript' className="chip">JavaScript</span>
-            <span key='Angular' className="chip">Angular</span>
-            <span key='React' className="chip">React</span>
-            <span key='Azure' className="chip">Azure</span>
-          </div>
-        </div>
+            {/* Tagline */}
+            <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.35s forwards', marginBottom: 36 }}>
+              <p style={{
+                fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
+                color: 'var(--text2)',
+                maxWidth: 480,
+                lineHeight: 1.75,
+              }}>
+                Hi! I'm <strong>Billy Labay</strong> — a fullstack software engineer who writes boring, reliable code — intentionally, because in the world of software, boring is beautiful.
+              </p>
+            </div>
 
-      {/* CTA Buttons */}
-        <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.45s forwards', display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 52 }}>
-          <a href={`mailto:${META.email}`} className="btn-orange">
-            Say hello 👋
-          </a>
-          <a href={META.linkedin} target="_blank" rel="noreferrer" className="btn-outline">
-            LinkedIn ↗
-          </a>
-          <a href={META.github} target="_blank" rel="noreferrer" className="btn-outline">
-            GitHub ↗
-          </a>
-        </div>
-
-        {/* Stats */}
-          <div style={{
-            opacity: 0,
-            animation: 'fadeUp 0.7s ease 0.55s forwards',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-            gap: 24,
-            paddingTop: 28,
-            borderTop: '1px solid var(--border)',
-          }}>
-            {STATS.map(s => (
-              <div key={s.label}>
-                <div style={{
-                  fontFamily: 'Syne, sans-serif',
-                  fontWeight: 800,
-                  fontSize: 'clamp(1.4rem, 3vw, 1.8rem)',
-                  color: '#f97316',
-                  lineHeight: 1,
-                  marginBottom: 5,
-                }}>
-                  {s.value}
-                </div>
-                <div style={{
-                  fontFamily: 'Fira Code, monospace',
-                  fontSize: '0.65rem',
-                  color: 'var(--muted)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}>
-                  {s.label}
-                </div>
+            {/* Role chip */}
+            <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.25s forwards', marginBottom: 20 }}>
+              {/* Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 24 }}>
+                <span key='Fullstack Engineer' className="chip">Fullstack Engineer</span>
+                <span key='Java' className="chip">Java</span>
+                <span key='Spring Boot' className="chip">Spring Boot</span>
+                <span key='JavaScript' className="chip">JavaScript</span>
+                <span key='Angular' className="chip">Angular</span>
+                <span key='React' className="chip">React</span>
+                <span key='Azure' className="chip">Azure</span>
               </div>
-            ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div style={{ opacity: 0, animation: 'fadeUp 0.7s ease 0.45s forwards', display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 52 }}>
+              <a href={`mailto:${META.email}`} className="btn-orange">
+                Say hello 👋
+              </a>
+              <a href={META.linkedin} target="_blank" rel="noreferrer" className="btn-outline">
+                LinkedIn ↗
+              </a>
+              <a href={META.github} target="_blank" rel="noreferrer" className="btn-outline">
+                GitHub ↗
+              </a>
+            </div>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 10,
+              paddingTop: 28,
+              borderTop: '1px solid var(--border)',
+            }}>
+              {[
+                { emoji: '☕', text: 'Fueled by coffee, driven by clean code' },
+                { emoji: '🚀', text: '8 years in. Still get excited when the pipeline goes green' },
+                { emoji: '📉', text: 'Saved CAD 500K annually in cloud costs. My boss was happy. Once.' },
+              ].map(f => (
+                <div key={f.text} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontSize: '1rem' }}>{f.emoji}</span>
+                  <span style={{
+                    fontFamily: 'Fira Code, monospace',
+                    fontSize: '0.82rem',
+                    color: 'var(--text2)',
+                  }}>
+                    {f.text}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   )
 }
