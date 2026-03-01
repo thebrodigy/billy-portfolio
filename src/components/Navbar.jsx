@@ -85,7 +85,7 @@ export default function Navbar({ theme, toggleTheme }) {
             style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}
           >
             <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: '0.88rem', color: 'var(--text)', whiteSpace: 'nowrap' }}>
-              the<span style={{ color: '#f97316' }}>brodigy</span>
+              billy<span style={{ color: '#f97316' }}>labay</span>
             </span>
           </button>
 
