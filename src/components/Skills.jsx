@@ -66,49 +66,56 @@ export default function Skills() {
                 Certifications
               </div>
               {CERTIFICATIONS.map(cert => (
-                <div
-                  key={cert.code}
-                  className="card"
-                  style={{
-                    padding: '20px 24px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 16,
-                    background: 'linear-gradient(135deg, rgba(249,115,22,0.05) 0%, var(--card-bg) 100%)',
-                    border: '1px solid rgba(249,115,22,0.2)',
-                  }}
-                >
-                  <span style={{ fontSize: '2rem' }}>{cert.emoji}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{
-                      fontFamily: 'Syne, sans-serif',
-                      fontWeight: 700,
-                      fontSize: '0.85rem',
-                      color: 'var(--text)',
-                      marginBottom: 4,
-                    }}>
-                      {cert.name}
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ fontSize: '0.8rem', padding: '9px 18px' }}
+                  >
+                    <div
+                      key={cert.code}
+                      className="card"
+                      style={{
+                        padding: '20px 24px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 16,
+                        background: 'linear-gradient(135deg, rgba(249,115,22,0.05) 0%, var(--card-bg) 100%)',
+                        border: '1px solid rgba(249,115,22,0.2)',
+                      }}
+                    >
+                      <span style={{ fontSize: '2rem' }}>{cert.emoji}</span>
+                      <div style={{ flex: 1 }}>
+                        <div style={{
+                          fontFamily: 'Syne, sans-serif',
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
+                          color: 'var(--text)',
+                          marginBottom: 4,
+                        }}>
+                          {cert.name}
+                        </div>
+                        <div style={{
+                          fontFamily: 'Fira Code, monospace',
+                          fontSize: '0.65rem',
+                          color: 'var(--muted)',
+                        }}>
+                          {cert.code} · {cert.certId}
+                        </div>
+                      </div>
+                      <span style={{
+                        fontFamily: 'Fira Code, monospace',
+                        fontSize: '0.65rem',
+                        color: '#4ade80',
+                        background: 'rgba(74,222,128,0.1)',
+                        border: '1px solid rgba(74,222,128,0.25)',
+                        padding: '3px 8px',
+                        borderRadius: 20,
+                      }}>
+                        ✓ Verified
+                      </span>
                     </div>
-                    <div style={{
-                      fontFamily: 'Fira Code, monospace',
-                      fontSize: '0.65rem',
-                      color: 'var(--muted)',
-                    }}>
-                      {cert.code} · {cert.certId}
-                    </div>
-                  </div>
-                  <span style={{
-                    fontFamily: 'Fira Code, monospace',
-                    fontSize: '0.65rem',
-                    color: '#4ade80',
-                    background: 'rgba(74,222,128,0.1)',
-                    border: '1px solid rgba(74,222,128,0.25)',
-                    padding: '3px 8px',
-                    borderRadius: 20,
-                  }}>
-                    ✓ Verified
-                  </span>
-                </div>
+                  </a>
               ))}
             </div>
           </FadeIn>

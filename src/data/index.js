@@ -153,6 +153,7 @@ export const CERTIFICATIONS = [
     certId: '8EB5978513C7B708',
     certNumber: 'D38546-82EH95',
     emoji: '☁️',
+    url: 'https://learn.microsoft.com/en-us/users/billylabay-2912/credentials/8eb5978513c7b708',
   },
 ]
 
