@@ -230,9 +230,9 @@ export default function Hero() {
               borderTop: '1px solid var(--border)',
             }}>
               {[
-                { emoji: '☕', text: 'Fueled by coffee, driven by clean code' },
                 { emoji: '🚀', text: '8 years in. Still get excited when the pipeline goes green' },
-                { emoji: '📉', text: 'Saved CAD 500K annually in cloud costs. My boss was happy. Once.' },
+                { emoji: '🎒', text: 'Bag collector. Because carry systems matter too.' },
+                { emoji: '🚶', text: 'Rucked hundreds of kilometers — and counting.' },
               ].map(f => (
                 <div key={f.text} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: '1rem' }}>{f.emoji}</span>
