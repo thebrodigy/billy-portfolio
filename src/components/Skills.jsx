@@ -3,7 +3,7 @@ import FadeIn from './FadeIn'
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ padding: '100px 0', background: 'var(--bg2)' }}>
+    <section id="skills" style={{ padding: '100px 0', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 24px' }}>
 
         <FadeIn>
@@ -67,56 +67,56 @@ export default function Skills() {
                 Certifications
               </div>
               {CERTIFICATIONS.map(cert => (
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ fontSize: '0.8rem', padding: '9px 18px' }}
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontSize: '0.8rem', padding: '9px 18px' }}
+                >
+                  <div
+                    key={cert.code}
+                    className="card"
+                    style={{
+                      padding: '20px 24px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 16,
+                      background: 'linear-gradient(135deg, rgba(249,115,22,0.05) 0%, var(--card-bg) 100%)',
+                      border: '1px solid rgba(249,115,22,0.2)',
+                    }}
                   >
-                    <div
-                      key={cert.code}
-                      className="card"
-                      style={{
-                        padding: '20px 24px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 16,
-                        background: 'linear-gradient(135deg, rgba(249,115,22,0.05) 0%, var(--card-bg) 100%)',
-                        border: '1px solid rgba(249,115,22,0.2)',
-                      }}
-                    >
-                      <span style={{ fontSize: '2rem' }}>{cert.emoji}</span>
-                      <div style={{ flex: 1 }}>
-                        <div style={{
-                          fontFamily: 'Syne, sans-serif',
-                          fontWeight: 700,
-                          fontSize: '0.85rem',
-                          color: 'var(--text)',
-                          marginBottom: 4,
-                        }}>
-                          {cert.name}
-                        </div>
-                        <div style={{
-                          fontFamily: 'Fira Code, monospace',
-                          fontSize: '0.65rem',
-                          color: 'var(--muted)',
-                        }}>
-                          {cert.code} · {cert.certId}
-                        </div>
+                    <span style={{ fontSize: '2rem' }}>{cert.emoji}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        fontFamily: 'Syne, sans-serif',
+                        fontWeight: 700,
+                        fontSize: '0.85rem',
+                        color: 'var(--text)',
+                        marginBottom: 4,
+                      }}>
+                        {cert.name}
                       </div>
-                      <span style={{
+                      <div style={{
                         fontFamily: 'Fira Code, monospace',
                         fontSize: '0.65rem',
-                        color: '#4ade80',
-                        background: 'rgba(74,222,128,0.1)',
-                        border: '1px solid rgba(74,222,128,0.25)',
-                        padding: '3px 8px',
-                        borderRadius: 20,
+                        color: 'var(--muted)',
                       }}>
-                        ✓ Verified
-                      </span>
+                        {cert.code} · {cert.certId}
+                      </div>
                     </div>
-                  </a>
+                    <span style={{
+                      fontFamily: 'Fira Code, monospace',
+                      fontSize: '0.65rem',
+                      color: '#4ade80',
+                      background: 'rgba(74,222,128,0.1)',
+                      border: '1px solid rgba(74,222,128,0.25)',
+                      padding: '3px 8px',
+                      borderRadius: 20,
+                    }}>
+                      ✓ Verified
+                    </span>
+                  </div>
+                </a>
               ))}
             </div>
           </FadeIn>

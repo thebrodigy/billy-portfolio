@@ -21,7 +21,7 @@ function LinkIcon() {
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: '100px 0', background: 'var(--bg)' }}>
+    <section id="projects" style={{ padding: '100px 0', background: 'var(--bg2)' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 24px' }}>
 
         <FadeIn>

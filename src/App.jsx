@@ -7,6 +7,7 @@ import Projects   from './components/Projects'
 import Skills     from './components/Skills'
 import Contact    from './components/Contact'
 import Footer     from './components/Footer'
+import Services from './components/Services'
 
 export default function App() {
   const { theme, toggle } = useTheme()
@@ -16,6 +17,7 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggle} />
       <main>
         <Hero />
+        <Services />
         <Experience />
         <Projects />
         <Skills />

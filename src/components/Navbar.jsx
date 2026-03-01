@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const NAV_LINKS = ['About', 'Experience', 'Projects', 'Skills', 'Contact']
+const NAV_LINKS = ['About', 'Services', 'Experience', 'Projects', 'Skills', 'Contact']
 
 const SunIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,21 +26,34 @@ export default function Navbar({ theme, toggleTheme }) {
   const [active,   setActive]     = useState('About')
   const [isMobile, setIsMobile]   = useState(window.innerWidth < MOBILE_BREAKPOINT)
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    const onResize = () => {
-      const mobile = window.innerWidth < MOBILE_BREAKPOINT
-      setIsMobile(mobile)
-      if (!mobile) setMenuOpen(false)   // close drawer when expanding to desktop
-    }
+useEffect(() => {
+  const onScroll = () => setScrolled(window.scrollY > 40)
+  window.addEventListener('scroll', onScroll)
 
-    window.addEventListener('scroll', onScroll)
-    window.addEventListener('resize', onResize)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onResize)
-    }
-  }, [])
+  // Watch each section and update active nav on scroll
+  const observers = []
+  NAV_LINKS.forEach(link => {
+    const el = document.getElementById(link.toLowerCase())
+    if (!el) return
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setActive(link)
+      },
+      {
+        rootMargin: '-40% 0px -55% 0px', // triggers when section is in the middle of viewport
+        threshold: 0,
+      }
+    )
+    obs.observe(el)
+    observers.push(obs)
+  })
+
+  return () => {
+    window.removeEventListener('scroll', onScroll)
+    observers.forEach(obs => obs.disconnect())
+  }
+}, [])
 
   // Close mobile menu on outside click
   useEffect(() => {

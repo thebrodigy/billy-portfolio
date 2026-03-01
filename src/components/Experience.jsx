@@ -3,7 +3,7 @@ import FadeIn from './FadeIn'
 
 export default function Experience() {
   return (
-    <section id="experience" style={{ padding: '100px 0', background: 'var(--bg2)' }}>
+    <section id="experience" style={{ padding: '100px 0', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 24px' }}>
 
         <FadeIn>

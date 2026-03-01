@@ -10,7 +10,7 @@ const CONTACT_ITEMS = [
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: '100px 0', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" style={{ padding: '100px 0', background: 'var(--bg2)', position: 'relative', overflow: 'hidden' }}>
       {/* Background glow */}
       <div style={{
         position: 'absolute', bottom: '-100px', right: '-100px',

@@ -19,6 +19,35 @@ export const STATS = [
   { value: '99.9%',    label: 'Uptime maintained' },
 ]
 
+// ── Services ────────────────────────────────────────────────
+export const SERVICES = [
+  {
+    name: 'Web Development',
+    description: 'Clean, scalable websites and web applications built with modern technologies. Fast, maintainable, and ready to grow with your business.',
+    emoji: '🖥️',
+  },
+  {
+    name: 'API Development & Integration',
+    description: 'Custom APIs and third-party integrations that connect your systems and streamline your workflows — built to be reliable and well-documented.',
+    emoji: '🔗',
+  },
+  {
+    name: 'Performance Optimization',
+    description: 'I audit your codebase, identify bottlenecks, and implement targeted improvements to speed, Core Web Vitals, and overall efficiency.',
+    emoji: '⚡',
+  },
+  {
+    name: 'Consulting & Technical Advisory',
+    description: 'Clear, honest guidance on architecture, stack selection, and development roadmaps — so you move forward with confidence and avoid costly mistakes.',
+    emoji: '🧠',
+  },
+  {
+    name: 'Maintenance & Support',
+    description: 'Ongoing support to keep your applications running smoothly — from regular updates and security patches to troubleshooting and feature enhancements.',
+    emoji: '🛠️',
+  }
+]
+
 // ── Experience ────────────────────────────────────────────────
 export const EXPERIENCES = [
   {
