@@ -192,7 +192,7 @@ export default function Hero() {
                 maxWidth: 480,
                 lineHeight: 1.75,
               }}>
-                Hi! I'm <strong>Billy Labay</strong> — a fullstack software engineer who writes boring, reliable code — intentionally, because in the world of software, boring is beautiful.
+                Hi! I'm <strong>Billy</strong> — a fullstack engineer who genuinely loves the craft. Whether it's designing a microservice from scratch or debugging why the button is 2px off, I'm in. Both sides of the stack, all the way.
               </p>
             </div>
 

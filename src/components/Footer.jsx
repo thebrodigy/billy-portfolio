@@ -22,7 +22,7 @@ export default function Footer() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span style={{ fontFamily: 'Fira Code, monospace', fontSize: '0.72rem', color: 'var(--muted)' }}>
-            © {year} {META.name}
+            © {year} {META.name} | {META.alias}
           </span>
         </div>
 

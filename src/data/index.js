@@ -1,8 +1,9 @@
 //Metadata
 export const META = {
   name: 'Billy Labay',
+  alias: 'thebrodigy',
   role: 'Fullstack Engineer',
-  tagline: "Hi! I'm <strong>Billy Labay</strong>. I write boring, reliable code — intentionally, because in the world of software, boring is beautiful. ",
+  tagline: "Hi! I'm <strong>Billy Labay</strong>. Fullstack engineer with a backend soul. I design the APIs, build the microservices, and yes — I'll fix your Angular component too. Clean code, solid architecture, both ends of the wire. ",
   location: 'Laguna, PH',
   phone: '+63 961 023 5867',
   email: 'labaybillyjames@gmail.com',

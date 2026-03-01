@@ -9,6 +9,16 @@ export default function Skills() {
         <FadeIn>
           <div className="section-label">// what I know</div>
           <h2 className="section-title">Skills & Tools</h2>
+          <p style={{
+            fontFamily: 'Fira Code, monospace',
+            fontSize: '0.82rem',
+            color: 'var(--muted)',
+            marginTop: -32,
+            marginBottom: 48,
+            lineHeight: 1.7,
+          }}>
+            I'm <span style={{ color: 'var(--text2)' }}>language agnostic</span> — Always open to learning new stacks.
+          </p>
         </FadeIn>
 
         {/* Skill categories */}
