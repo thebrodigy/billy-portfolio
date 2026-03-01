@@ -17,6 +17,7 @@ export default function Skills() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 24,
           alignItems: 'stretch',
+          marginBottom: 40,
         }}>
           {SKILLS.map((group, i) => (
             <FadeIn key={group.category} delay={i * 0.07}>
